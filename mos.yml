@@ -1,11 +1,15 @@
 author: mongoose-os
-name: arduino-compat
-description: Arduino
+description: Arduino compatibility
 type: lib
-# arch: PLATFORM
 version: 1.0
-skeleton_version: 2017-05-18
+
 sources:
   - src
 build_vars:
   MGOS_ENABLE_ARDUINO_API: 1
+
+tags:
+  - arduino
+  - c
+
+skeleton_version: 2017-05-18
