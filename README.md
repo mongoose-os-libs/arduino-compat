@@ -1,0 +1,1 @@
+# Arduino compatibility for Mongoose OS
