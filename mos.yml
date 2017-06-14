@@ -5,8 +5,9 @@ version: 1.0
 
 sources:
   - src
-build_vars:
-  MGOS_ENABLE_ARDUINO_API: 1
+
+cdefs:
+  ARDUINO: 150
 
 tags:
   - arduino
