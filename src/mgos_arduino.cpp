@@ -17,7 +17,11 @@
 #include "fw/src/mgos_init.h"
 #include "fw/src/mgos_timers.h"
 
-void pinMode(uint8_t pin, uint8_t mode) {
+#ifndef IRAM
+#define IRAM
+#endif
+
+IRAM void pinMode(uint8_t pin, uint8_t mode) {
   switch (mode) {
     case INPUT:
     case INPUT_PULLUP:
@@ -33,11 +37,11 @@ void pinMode(uint8_t pin, uint8_t mode) {
   }
 }
 
-int digitalRead(uint8_t pin) {
+IRAM int digitalRead(uint8_t pin) {
   return mgos_gpio_read(pin);
 }
 
-void digitalWrite(uint8_t pin, uint8_t val) {
+IRAM void digitalWrite(uint8_t pin, uint8_t val) {
   mgos_gpio_write(pin, val);
 }
 
