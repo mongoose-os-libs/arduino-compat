@@ -5,17 +5,17 @@
 
 #include "mgos_arduino.h"
 
-#include "fw/src/mgos_app.h"
+#include "mgos_app.h"
 
 #include <Arduino.h>
 
 #include "common/cs_dbg.h"
 #include "mongoose/mongoose.h"
 
-#include "fw/src/mgos_gpio.h"
-#include "fw/src/mgos_hal.h"
-#include "fw/src/mgos_init.h"
-#include "fw/src/mgos_timers.h"
+#include "mgos_gpio.h"
+#include "mgos_hal.h"
+#include "mgos_init.h"
+#include "mgos_timers.h"
 
 #ifndef IRAM
 #define IRAM
