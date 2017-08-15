@@ -54,11 +54,11 @@ void delayMicroseconds(unsigned int us) {
 }
 
 unsigned long millis(void) {
-  return mg_time() * 1000;
+  return mgos_uptime() * 1000;
 }
 
 unsigned long micros(void) {
-  return mg_time() * 1000000;
+  return mgos_uptime() * 1000000;
 }
 
 void interrupts(void) {
