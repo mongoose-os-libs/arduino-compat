@@ -3,7 +3,9 @@ description: Arduino compatibility
 type: lib
 version: 1.0
 
-platforms: [ cc3200, esp32, esp8266 ]
+# cc3200 c++ compiler doesn't understand nullptr, so we disable cc3200 builds.
+# TODO(rojer): look into updating TI c++ compiler.
+platforms: [ esp32, esp8266 ]
 
 sources:
   - src
