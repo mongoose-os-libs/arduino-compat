@@ -18,5 +18,6 @@ cdefs:
 tags:
   - arduino
   - c
+  - core
 
 manifest_version: 2017-09-29
