@@ -26,7 +26,7 @@ static inline uint64_t uptime()
     return (uint64_t) (1000000 * mgos_uptime());
 }
 
-uint32_t pulseInLong(uint8_t pin, uint8_t state, unsigned long timeout)
+unsigned long pulseInLong(uint8_t pin, uint8_t state, unsigned long timeout)
 {
     uint64_t startMicros = uptime();
 
