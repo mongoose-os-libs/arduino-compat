@@ -21,6 +21,38 @@
 #define IRAM
 #endif
 
+static inline uint64_t uptime() {
+  return (uint64_t)(1000000 * mgos_uptime());
+}
+
+unsigned long pulseInLong(uint8_t pin, uint8_t state, unsigned long timeout) {
+  uint64_t startMicros = uptime();
+
+  // wait for any previous pulse to end
+  while (state == mgos_gpio_read(pin)) {
+    if ((uptime() - startMicros) > timeout) {
+      return 0;
+    }
+  }
+
+  // wait for the pulse to start
+  while (state != mgos_gpio_read(pin)) {
+    if ((uptime() - startMicros) > timeout) {
+      return 0;
+    }
+  }
+
+  uint64_t start = uptime();
+
+  // wait for the pulse to stop
+  while (state == mgos_gpio_read(pin)) {
+    if ((uptime() - startMicros) > timeout) {
+      return 0;
+    }
+  }
+  return (uint32_t)(uptime() - start);
+}
+
 IRAM void pinMode(uint8_t pin, uint8_t mode) {
   switch (mode) {
     case INPUT:
