@@ -136,9 +136,6 @@ void detachInterrupt(uint8_t pin);
 void interrupts(void);
 void noInterrupts(void);
 
-unsigned long pulseInLong(uint8_t pin, uint8_t state,
-    unsigned long timeout = 1000000L);
-
 void setup(void);
 void loop(void);
 
@@ -158,7 +155,12 @@ void loop(void);
 }  // extern "C"
 #endif
 
-#ifdef TODO
+#ifdef __cplusplus
+unsigned long pulseInLong(uint8_t pin, uint8_t state,
+                          unsigned long timeout = 1000000L);
+#endif
+
+#if 0 /* TODO */
 
 #ifdef __cplusplus
 
