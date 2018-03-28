@@ -10,7 +10,7 @@
 #include <Arduino.h>
 
 #include "common/cs_dbg.h"
-#include "mongoose/mongoose.h"
+#include "mongoose.h"
 
 #include "mgos_gpio.h"
 #include "mgos_hal.h"
