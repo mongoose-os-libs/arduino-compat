@@ -15,8 +15,8 @@
 #include "mgos_gpio.h"
 #include "mgos_hal.h"
 #include "mgos_init.h"
-#include "mgos_timers.h"
 #include "mgos_time.h"
+#include "mgos_timers.h"
 
 #ifndef IRAM
 #define IRAM
