@@ -43,7 +43,11 @@ extern "C" {
 #define INPUT 0x00
 #define INPUT_PULLUP 0x02
 #define OUTPUT 0x01
-
+  
+//consts for shiftIn and shiftOut functions
+#define LSBFIRST 0
+#define MSBFIRST 1
+  
 #define PI 3.1415926535897932384626433832795
 #define HALF_PI 1.5707963267948966192313216916398
 #define TWO_PI 6.283185307179586476925286766559
@@ -123,10 +127,11 @@ unsigned long millis(void);
 unsigned long micros(void);
 void delay(unsigned int ms);
 void delayMicroseconds(unsigned int us);
-#ifdef TODO
+
 void shiftOut(uint8_t dataPin, uint8_t clockPin, uint8_t bitOrder, uint8_t val);
 uint8_t shiftIn(uint8_t dataPin, uint8_t clockPin, uint8_t bitOrder);
 
+#ifdef TODO
 void attachInterrupt(uint8_t pin, void (*)(void), int mode);
 void detachInterrupt(uint8_t pin);
 #endif
