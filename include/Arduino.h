@@ -123,6 +123,8 @@ unsigned long millis(void);
 unsigned long micros(void);
 void delay(unsigned int ms);
 void delayMicroseconds(unsigned int us);
+void yield(void);
+
 #ifdef TODO
 void shiftOut(uint8_t dataPin, uint8_t clockPin, uint8_t bitOrder, uint8_t val);
 uint8_t shiftIn(uint8_t dataPin, uint8_t clockPin, uint8_t bitOrder);
