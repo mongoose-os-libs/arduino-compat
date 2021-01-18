@@ -117,6 +117,9 @@ void loop(void) {
 }
 
 extern "C" {
+static void __empty() {};
+void yield(void) __attribute__((weak, alias("__empty")));
+
 void loop_cb(void *arg) {
   loop();
   (void) arg;
