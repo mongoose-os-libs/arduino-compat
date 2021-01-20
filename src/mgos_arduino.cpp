@@ -54,6 +54,10 @@ unsigned long pulseInLong(uint8_t pin, uint8_t state, unsigned long timeout) {
   return (uint32_t)(uptime() - start);
 }
 
+unsigned long pulseIn(uint8_t pin, uint8_t state, unsigned long timeout) {
+  return pulseInLong(pin, state, timeout);
+}
+
 IRAM void pinMode(uint8_t pin, uint8_t mode) {
   switch (mode) {
     case INPUT:
